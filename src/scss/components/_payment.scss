@@ -1,0 +1,104 @@
+.payment-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 55px;
+}
+
+.payment-item {
+    width: 100%;
+    margin: 0 auto 20px;
+
+    .radio-label {
+        height: 120px;
+        border: 1px solid $border-primary-color;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        padding: 0 35px 0 24px;
+
+        .radio-icon {
+            margin-right: 18px;
+        }
+
+        .payment-icon {
+            max-width: 65.4px;
+            margin-right: 30px;
+        }
+
+        .payment-name {
+            color: $text-primary-color;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .payment-description {
+            color: $text-tertiary-color;
+            font-size: 15px;
+        }
+    }
+
+    input[type="radio"]:checked + .radio-label {
+        border-color: $primary-color;
+        background-color: $background-secondary-color;
+    }
+
+    input[type="radio"]:disabled + .radio-label {
+        cursor: not-allowed;
+
+        .payment-name,
+        .payment-description {
+            color: $border-primary-color;
+        }
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .payment-item {
+        width: 400px;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .payment-item {
+        margin: 0 0 20px;
+        width: 48%;
+    }
+}
+
+.payment-announcement-list-block {
+    position: relative;
+}
+
+@media (min-width: $screen-md-min) {
+    .payment-announcement-list-block {
+        margin: 30px 0;
+    }
+}
+
+.payment-announcement-list-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.payment-announcement-list {
+    font-size: 12px;
+    line-height: 20px;
+    color: $text-tertiary-color;
+
+    a {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:active,
+        &:focus {
+            color: $primary-color;
+        }
+    }
+
+    .import-announcement {
+        color: black;
+    }
+}
